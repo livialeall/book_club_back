@@ -8,10 +8,7 @@ business = UserBusiness();
 @router.post("/create_user")
 def create_user(user_data:User):
     try:
-        result = business.create_user(user_data)
-        if(result):
-            return {"message": "Cadastro efetuado com sucesso!"}
-        else:
-            raise HTTPException(status_code=400,detail="Não foi possível efetuar seu cadastro")
-    except Exception as e:
+        business.create_user(user_data)
+        return {"status":200,"message": "Cadastro efetuado com sucesso"}
+    except HTTPException as e:
         raise HTTPException(e)
