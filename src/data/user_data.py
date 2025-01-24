@@ -6,14 +6,13 @@ class UserData():
     def create_user(self, data:User):
         name = data.name
         email = data.email
-
         conection = sqlite3.connect(db)
         try:
             cursor = conection.cursor()
             cursor.execute('''
-                    INSERT INTO users (name, email)
-                    VALUES (?,?)
-                ''',(name, email)
+                    INSERT INTO users (name, email,password)
+                    VALUES (?,?,?)
+                ''',(name, email,data.password)
             )
             conection.commit()
         except Exception as e:
