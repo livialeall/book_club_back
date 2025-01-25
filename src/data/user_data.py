@@ -20,3 +20,18 @@ class UserData():
         finally:
             conection.close()
         return True
+    
+    def verify_email(self, user_email):
+        conection= sqlite3.connect(db)
+        try:
+            cursor = conection.cursor()
+            cursor.execute('''
+                    SELECT u.email,u.password from users as u where u.email = ?
+                ''',(user_email,)
+            )
+            resultado = cursor.fetchone()
+            return resultado
+        except Exception as e:
+                raise Exception (e)
+        finally:
+            conection.close()

@@ -12,3 +12,12 @@ def create_user(user_data:User):
         return {"status":200,"message": "Cadastro efetuado com sucesso"}
     except HTTPException as e:
         raise HTTPException(e)
+@router.post("/login")
+def login(auth:User):
+    try:
+        result = business.login(auth)
+        if(result == False):
+            return {"status":500,"message": "ERROU"}
+        return {"status":200,"message": "Login efetuado com sucesso"}
+    except HTTPException as e:
+        raise HTTPException(e)
