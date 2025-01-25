@@ -1,14 +1,14 @@
 from fastapi import HTTPException
 from data.user_data import UserData
-from domain.entities import User
 from argon2 import PasswordHasher
 from argon2.exceptions import VerifyMismatchError
+from domain.entities.User import User,NewUser
 
 user_data = UserData()
 ph = PasswordHasher()
 
 class UserBusiness:
-    def create_user(self,data:User):
+    def create_user(self,data:NewUser):
         try:
             data.password = ph.hash(data.password)
             user_data.create_user(data)
