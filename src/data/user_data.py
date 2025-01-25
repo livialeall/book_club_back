@@ -10,9 +10,9 @@ class UserData():
         try:
             cursor = conection.cursor()
             cursor.execute('''
-                    INSERT INTO users (name, email,password)
-                    VALUES (?,?,?)
-                ''',(name, email,data.password)
+                    INSERT INTO users (name, email,password,contact)
+                    VALUES (?,?,?,?)
+                ''',(name, email,data.password,data.contact)
             )
             conection.commit()
         except Exception as e:
