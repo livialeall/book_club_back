@@ -1,0 +1,139 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+#root{
+height: 100vh;
+display: flex;
+justify-content: center;
+}
+
+.main{
+    background-color: rgb(226, 226, 226);
+    padding: 36px 32px;
+    margin: 16px;
+    border-radius: 6px 8px;
+    box-shadow: 1px 1px 20px rgba(148, 148, 148, 0.301);
+}
+
+button {
+    padding: 12px 10px;
+    border-radius: 6px 8px;
+    border: 1px solid gray;
+    background-color: rgb(151, 151, 151);
+    color:white;
+}
+
+input{
+    padding: 12px 16px;
+    border-radius: 6px 8px;
+    border: 1px solid gray;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+}
+
+.g-8{
+    display: flex;
+    gap: 20px;
+}
+
+.grid-container {
+    display: grid;
+    background-color: rgb(196, 194, 194);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, auto);
+    padding-bottom:20px;
+    border-radius: 6px 8px;
+    text-align: center;
+    gap:2px;
+}
+
+
+.grid-item {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(133, 133, 133);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.grid-content{
+    background-color: rgb(247, 244, 244);
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.button-div{
+    display: flex;
+    justify-content: space-between;
+}
+.button-div button{
+    width: 48%;
+}
